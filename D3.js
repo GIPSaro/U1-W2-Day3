@@ -151,7 +151,7 @@ eyeColor = {
   yellow: [],
   brown: [],
   red: [],
-  "blue-gray": [],
+  blueGray: [],
 };
 console.log(eyeColor);
 
@@ -174,7 +174,7 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
       eyeColor.brown.push(starWarsCharacters[i]);
       break;
     case "blue-gray":
-      eyeColor["blue-gray"].push(starWarsCharacters[i]);
+      eyeColor.blueGray.push(starWarsCharacters[i]);
       break;
   }
 }
@@ -240,6 +240,20 @@ console.log(starWarsCharacters);
 */
 
 console.log("ESERCIZIO 9");
+
+console.log("CHARACTERS BEFORE", charactersNames.length);
+for (let i = 0; i < charactersNames.length; i++) {
+  const character = charactersNames[i];
+
+  for (let f = 0; f < femaleCharacters.length; f++) {
+    const femCharacter = femaleCharacters[f];
+    if (femCharacter.name === character) {
+      console.log("FEMALE", character);
+      charactersNames.splice(i, 1);
+    }
+  }
+}
+console.log("CHARACTERS AFTER", charactersNames.length);
 
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
